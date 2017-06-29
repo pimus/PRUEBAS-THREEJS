@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Pruebas 3D en </title>
+	<style>
+		body { margin: 0; }
+		canvas { width: 100%; height: 100% }
+	</style>
+</head>
+<body>
+
+<script src="three.js-master/build/three.min.js"></script>
+<script src="three.js-master/examples/js/Detector.js"></script>
+<script src="funciones.js"></script>
+
+<script>
+  
+  var g_cgf = { 
+      screenW:600, screenH:400  
+  }
+  
+  var scene, camera, renderer, g_idF; 
+  var cubo, linea; 
+  
+  //----------------------------- 
+  
+  startScene();  
+  showEjes();
+  
+  showCubo();
+  showLinea();
+  
+
+  //-----------------------------
+    
+  if (Detector.webgl) {
+       // Initiate function or other initializations here
+       animate();
+  } else {
+       var warning = Detector.getWebGLErrorMessage();
+       document.getElementById('container').appendChild(warning);
+  }
+	
+    
+</script>
+<br>
+<button onclick="cancelAnimationFrame( g_idF );">Pause</button>
+</body>
+</html>
